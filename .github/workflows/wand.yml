@@ -24,11 +24,13 @@ jobs:
           pip install notebook jupyter nbconvert wandb opencv-python-headless numpy matplotlib scikit-learn scipy
 
       - name: Setup Weights & Biases
-        run: echo "WANDB_API_KEY=${{ secrets.WANDB_API_KEY }}" >> $GITHUB_ENV
+        env:
+          WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
+        run: wandb login --relogin $WANDB_API_KEY
 
       - name: Run Jupyter Notebook
         run: |
-          jupyter nbconvert --to notebook --execute kaggle-notebook.ipynb --output output.ipynb
+          jupyter nbconvert --to notebook --execute kaggle-notebook.ipynb --output output.ipynb --ExecutePreprocessor.timeout=-1
 
       - name: Upload Notebook Artifact
         uses: actions/upload-artifact@v4
