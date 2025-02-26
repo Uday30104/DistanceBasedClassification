@@ -9,17 +9,13 @@ Summary of findings and learnings from the project:
 
 This project successfully classified faces using distance-based classification and K-Means clustering.
 
+The following is the screenshot from WandB about the weights and biases from the lab code:
+![input image 3](wandb.jpg)
 
-Screenshots of dashboard of the WANDB:
-![dashboard screeshot 1](image-1.png)
-![dashboard screenshot 2](image-2.png)
-![dashboard screenshot 3](image-3.png)
-
-
-
-
-input images:
+input template image:
 ![input image 1](Dr_Shashi_Tharoor.jpg)
+
+Data Set Image:
 ![input image 2](Plaksha_Faculty.jpg)
 
 output images are contained in the output folder.
